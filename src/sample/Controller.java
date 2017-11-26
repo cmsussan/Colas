@@ -43,10 +43,11 @@ public class Controller implements Initializable{
     /* -Mètodo para crear el Texfield donde se insertaran los valores dados por el usuario*/
     public void MostrarTexfieldInsert(){
         TextField texto1 = new TextField();
+        texto1.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(4));//No acepta letras en el textfield.
         texto1.setPromptText("Ingrese valor");
         HBox.getChildren().add(texto1);
         //Evento click para insertar los valores dentro del FlowPane
-        texto1.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(4));//No acepta letras en el textfield
+
         texto1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -140,7 +141,7 @@ public class Controller implements Initializable{
         TextField texto = new TextField();
         texto.setPromptText("Ingrese valor a buscar");
         HBox.getChildren().add(texto);
-        texto.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(4));
+        texto.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(4));// validar numeros
         texto.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
