@@ -12,6 +12,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.layout.HBox;
 
@@ -45,6 +46,7 @@ public class Controller implements Initializable{
         texto1.setPromptText("Ingrese valor");
         HBox.getChildren().add(texto1);
         //Evento click para insertar los valores dentro del FlowPane
+         texto1.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(4));//No acepta letras en el textfield
         texto1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -138,6 +140,7 @@ public class Controller implements Initializable{
         TextField texto = new TextField();
         texto.setPromptText("Ingrese valor a buscar");
         HBox.getChildren().add(texto);
+        texto.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(4));
         texto.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
@@ -248,6 +251,27 @@ public class Controller implements Initializable{
             }
 
         });
+    }
+    public EventHandler numeric_Validation(final Integer max_Lengh) {
+        return new EventHandler<javafx.scene.input.KeyEvent>() {
+            @Override
+            public void handle(javafx.scene.input.KeyEvent e) {
+                TextField txt_TextField = (TextField) e.getSource();
+                if (txt_TextField.getText().length() >= max_Lengh) {
+                    e.consume();
+                }
+                if (e.getCharacter().matches("[0-9.]")) {
+                    if (txt_TextField.getText().contains(".") && e.getCharacter().matches("[.]")) {
+                        e.consume();
+                    } else if (txt_TextField.getText().length() == 0 && e.getCharacter().matches("[.]")) {
+                        e.consume();
+                    }
+                } else {
+                    e.consume();
+                }
+            }
+
+        };
 
     }
 }
