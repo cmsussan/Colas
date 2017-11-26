@@ -46,7 +46,7 @@ public class Controller implements Initializable{
         texto1.setPromptText("Ingrese valor");
         HBox.getChildren().add(texto1);
         //Evento click para insertar los valores dentro del FlowPane
-        texto1.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(4));//No acepta letras en el textfield
+        texto1.addEventFilter(KeyEvent.KEY_TYPED, numeric_Validation(4));//No acepta letras en el textfield solo numeros.
         texto1.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
