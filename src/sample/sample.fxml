@@ -15,7 +15,7 @@
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="398.0" prefWidth="741.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <children>
         <ComboBox fx:id="Menu" layoutX="49.0" layoutY="58.0" prefWidth="150.0" promptText="Opciones" />
-        <HBox fx:id="HBox" layoutX="344.0" layoutY="44.0" prefHeight="53.0" prefWidth="224.0" />
+        <HBox fx:id="HBox" layoutX="338.0" layoutY="57.0" prefHeight="53.0" prefWidth="224.0" />
         <ButtonBar layoutX="-18.0" layoutY="83.0" prefHeight="40.0" prefWidth="200.0" />
         <ImageView fitHeight="88.0" fitWidth="114.0" layoutX="25.0" layoutY="131.0" pickOnBounds="true" preserveRatio="true">
             <image>
@@ -28,7 +28,7 @@
             </content>
         </ScrollPane>
         <Button fx:id="BtnEjecutar" defaultButton="true" layoutX="213.0" layoutY="58.0" mnemonicParsing="false" text="Ejecutar" />
-        <HBox alignment="CENTER" prefHeight="53.0" prefWidth="741.0" style="-fx-background-color: #2471A3;">
+        <HBox alignment="CENTER" prefHeight="25.0" prefWidth="741.0" style="-fx-background-color: #2471A3;">
             <children>
                 <Label alignment="BOTTOM_CENTER" contentDisplay="CENTER" text="Colas " textFill="#f8f5f5">
                     <font>
@@ -39,4 +39,3 @@
         </HBox>
     </children>
 </Pane>
-
